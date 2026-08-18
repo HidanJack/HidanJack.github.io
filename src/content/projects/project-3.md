@@ -3,13 +3,7 @@ title: 'GG (Git Guardian) — Notificaciones Distribuidas de Commits Pendientes'
 description: Construí en 4 días un sistema distribuido que te avisa al celular cuando dejas cambios sin commitear, con mensaje de commit sugerido y control remoto desde la app — sin usar IA para generarlo.
 publishDate: 'Mar 01 2025'
 isFeatured: true
-seo:
-  image:
-    src: '../../assets/images/project-3.jpg'
-    alt: Project preview
 ---
-
-![Project preview](../../assets/images/project-3.jpg)
 
 **Proyecto personal**, construido en 4 días de desarrollo intenso.
 

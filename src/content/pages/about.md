@@ -3,12 +3,7 @@ title: Sobre mí
 seo:
   title: Sobre mí
   description: Luis Catalán, desarrollador Python especializado en OCR, pipelines de datos y sistemas de matching con grafos.
-  image:
-    src: '../../assets/images/about.jpg'
-    alt: Persona trabajando frente a una computadora
 ---
-
-![Alt text for image](../../assets/images/about.jpg)
 
 ## Luis Catalán Reyes — Python Developer, CDMX (Remoto / Híbrido)
 

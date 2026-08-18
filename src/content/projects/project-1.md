@@ -3,13 +3,7 @@ title: 'Intelitax — Plataforma de Conciliación Bancaria/Contable Automatizada
 description: Automaticé por completo la conciliación bancaria de una empresa, incluyendo ingeniería inversa de fuentes PDF sin OCR, un motor de matching reescrito en Rust y una migración a plataforma multiusuario en Kubernetes.
 publishDate: 'Aug 01 2025'
 isFeatured: true
-seo:
-  image:
-    src: '../../assets/images/project-1.jpg'
-    alt: Project preview
 ---
-
-![Project preview](../../assets/images/project-1.jpg)
 
 **Proyecto insignia del portafolio.** En producción desde enero de 2025, procesando más de 1 millón de registros financieros reales.
 

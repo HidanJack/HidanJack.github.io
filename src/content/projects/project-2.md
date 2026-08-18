@@ -3,13 +3,7 @@ title: 'Knoto — Asistente Personal On-Device con LLM Local y Grafo de Conocimi
 description: Un asistente que no solo responde sobre tus documentos, sino que entiende quién es quién en tu familia sin que se lo digas y te avisa antes de que preguntes — corriendo 100% en el teléfono, sin nube.
 publishDate: 'May 01 2025'
 isFeatured: true
-seo:
-  image:
-    src: '../../assets/images/project-2.jpg'
-    alt: Project preview
 ---
-
-![Project preview](../../assets/images/project-2.jpg)
 
 **Proyecto personal.** Un asistente que entiende tu vida documentada — no solo la guarda. Le subes un acta de nacimiento y él solo deduce que esa persona es tu mamá o tu hijo, sin que se lo digas. Le subes tu póliza de seguro y, meses después, te avisa que está por vencer sin que tengas que preguntar. Todo corriendo directamente en el teléfono, sin que un solo documento salga del dispositivo.
 
