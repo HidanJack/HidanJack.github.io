@@ -1,0 +1,19 @@
+---
+const highlights: string[] = [
+    'Ingeniería inversa de un formato de fuente binario propietario embebido en PDFs bancarios, sin librerías externas, para decodificar datos sin depender de OCR.',
+    'Reescritura de un motor de conciliación financiera en Rust (PyO3) para procesar más de 1 millón de registros con mayor rendimiento.',
+    'Detección y corrección de una vulnerabilidad de autorización cruzada en una migración a arquitectura multiusuario, antes de llegar a producción.',
+    'App móvil con un LLM corriendo 100% en el dispositivo, sin nube, con arquitectura anti-alucinación sobre datos sensibles.'
+];
+---
+
+<div class="mb-16 sm:mb-24">
+    <h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">Logros destacados</h2>
+    <ul class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        {
+            highlights.map((item) => (
+                <li class="border-main border-l-2 border-dashed py-1 pl-4 text-sm sm:text-base">{item}</li>
+            ))
+        }
+    </ul>
+</div>

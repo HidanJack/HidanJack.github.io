@@ -1,43 +1,54 @@
 ---
-title: About
+title: Sobre mí
 seo:
-  title: About Me
-  description: Learn more about the person behind the website and embark on a journey of inspiration and shared experiences.
+  title: Sobre mí
+  description: Luis Catalán, desarrollador Python especializado en OCR, pipelines de datos y sistemas de matching con grafos.
   image:
     src: '../../assets/images/about.jpg'
-    alt: A person sitting at a desk in front of a computer
+    alt: Persona trabajando frente a una computadora
 ---
 
 ![Alt text for image](../../assets/images/about.jpg)
 
-**Note!:** This about page is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+## Luis Catalán Reyes — Python Developer, CDMX (Remoto / Híbrido)
 
-## Ethan Donovan - Web Developer based in Estonia
+Soy desarrollador Python con más de 3 años de experiencia construyendo pipelines ETL, procesamiento de documentos financieros y sistemas de conciliación bancaria en producción. He procesado más de 1 millón de registros reales, especializándome en OCR (Optical Character Recognition), matching multi-criterio y grafos (NetworkX, Neo4j).
 
-**Greetings!** I'm Ethan Donovan, a passionate web developer residing in the picturesque landscapes of [Estonia](https://en.wikipedia.org/wiki/Estonia). With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of web development.
+## Experiencia
 
-## Skills and Expertise
+**Desarrollador de Software — Intelitax / Soluciones Analíticas para Empresas S.A. de C.V.** _(Ene 2025 – Actualidad)_
+Construyo pipelines ETL para limpieza, normalización y consolidación de datos financieros desde múltiples formatos. Implemento sistemas de extracción OCR desde PDFs bancarios (Tesseract, OpenCV, YOLOv10) con ~95% de precisión en documentos mexicanos, y desarrollo motores de correlación multi-criterio basados en grafos para conciliación bancaria con trazabilidad completa.
 
-I specialize in front-end and back-end development, utilizing the latest technologies to build responsive and user-friendly websites. My proficiency includes **HTML**, **CSS**, **JavaScript**, and frameworks such as **Astro.js** for dynamic and interactive user interfaces. On the server side, I'm well-versed in Node.js and have experience with database management systems like MongoDB.
+**Analista de Información — Grupo Gabssa** _(Ago 2023 – Ago 2024)_
+Automatización de análisis, consolidación y reporteo de datos empresariales mediante scripts en Python.
 
-## Innovation and Problem-Solving
+**Analista de Tecnología — Ingeniería Integral Consultores México** _(Ago 2022 – Ago 2023)_
+Scripts de análisis en Python para requerimientos tecnológicos y soporte a infraestructura de TI.
 
-I thrive on solving complex problems and transforming ideas into functional, elegant websites. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
+## Por qué hago esto
 
-## Global Perspective, Local Impact
+Mi primer acercamiento a programar fue en la primaria, con Scratch — armar bloques de colores y ver que "hacían algo" fue suficiente para engancharme, y desde entonces no he dejado de programar, casi siempre por gusto antes que por obligación.
 
-Living in Estonia has not only influenced my appreciation for nature and culture but has also shaped my approach to web development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
+Construí **Knoto** porque yo mismo necesitaba un lugar donde no se me perdieran los papeles importantes de mi vida, sin tener que mandarlos a un servidor ajeno. En mi tiempo libre también construyo cosas solo por diversión: un proyecto de face-swap en tiempo real inspirado en videojuegos, páginas web con animaciones hechas a mano como regalo para alguien especial, y lo que se me vaya ocurriendo.
 
-## Continuous Learning
+Lo que me mueve no es el framework de moda, sino sentir que algo que construí de verdad le resuelve un problema a alguien — a mí o a otra persona. Sé que todavía me falta mucho por aprender, y esa parte —la de nunca terminar de aprender— es la que más amo de esta carrera.
 
-The dynamic nature of the tech industry inspires me to stay up-to-date with the latest trends and advancements. I'm always eager to expand my skill set and embrace emerging technologies that enhance the functionality and aesthetics of the websites I create.
+## Habilidades técnicas
 
-## Collaboration and Communication
+- **Lenguajes:** Python (avanzado), SQL, JavaScript, TypeScript
+- **Data & ETL:** Pandas, Polars, NumPy, pipelines configurables por JSON
+- **Grafos & Matching:** NetworkX, Neo4j, Cypher, RapidFuzz
+- **OCR & Documentos:** Tesseract, OpenCV, YOLOv10, docTR
+- **IA / ML:** Deep Learning, embeddings (sentence-transformers), LLMs on-device (llama.rn, Ollama)
+- **Backend & Cloud:** Flask, FastAPI, APIs REST, microservicios, AWS S3, Kafka, Azure
+- **Herramientas:** Git, pytest, Docker, ThreadPoolExecutor
 
-I believe in the power of collaboration and effective communication. Whether working with clients, designers, or fellow developers, I value clear communication to ensure the success of every project.
+## Educación y certificaciones
 
-## Get in Touch
+Lic. en Ciencias de la Informática (Trunca) — UPIICSA, IPN · Bachillerato Técnico en Informática — CONALEP Estado de México 236
 
-Are you looking to elevate your online presence or bring your digital ideas to life? I'd love to hear from you! Feel free to reach out for collaboration, consultation, or just a friendly chat about all things web development.
+Certificaciones: Python Profesional · Backend con Microservicios · Ruta y Fundamentos de Arquitectura de Software · DevOps: Bases y Conceptos · Fundamentos de IA · Fundamentos de Azure · CCNA Routing & Switching (Cisco)
 
-_Let's build something amazing together!_
+## Contacto
+
+¿Buscas a alguien para un rol de desarrollo Python, ingeniería de datos o sistemas OCR/grafos? Escríbeme, con gusto platicamos.

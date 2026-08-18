@@ -1,14 +1,17 @@
 ---
-title: Get in touch
+title: Contacto
 seo:
-  title: Contact
-  description: Get in touch through email or social media! Let me know how I can help.
+  title: Contacto
+  description: Contáctame por correo o LinkedIn para hablar de proyectos, colaboraciones u oportunidades laborales.
 ---
 
-Thank you for reaching out! Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:
+¡Gracias por escribir! Ya sea una oportunidad laboral, un proyecto o solo una pregunta técnica, con gusto platicamos. Puedes contactarme por cualquiera de estos medios:
 
 _Email:_
-Feel free to drop me an email at [example@example.com](mailto:example@example.com), and I'll do my best to respond as soon as possible.
+[luis.catalan.r@hotmail.com](mailto:luis.catalan.r@hotmail.com)
 
-_Social Media:_
-Connect with me on social media as well. Find me on [Twitter](https://twitter.com) or [LinkedIn](https://www.linkedin.com/).
+_Teléfono:_
+55 6427 2782
+
+_Redes:_
+Conéctate conmigo en [LinkedIn](https://linkedin.com/in/luis-catalán-reyes-032a48329) o revisa mi código en [GitHub](https://github.com/HidanJack).

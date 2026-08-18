@@ -4,6 +4,9 @@ import siteConfig from '../data/site-config';
 const socialLinks = siteConfig.socialLinks ?? [];
 const navLinks = siteConfig.footerNavLinks ?? [];
 const currentYear = new Date().getFullYear();
+
+const emailLink = socialLinks.find((link) => link.href.startsWith('mailto:'));
+const emailAddress = emailLink?.href.replace('mailto:', '');
 ---
 
 <footer class="mx-auto w-full max-w-3xl pt-12 pb-10 sm:pt-24 sm:pb-14">
@@ -27,16 +30,26 @@ const currentYear = new Date().getFullYear();
         {
             socialLinks.length > 0 && (
                 <div class="flex flex-wrap gap-x-4 gap-y-1">
-                    {socialLinks.map((link) => (
-                        <a
-                            class="inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2"
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {link.text}
-                        </a>
-                    ))}
+                    {socialLinks.map((link) =>
+                        link.href.startsWith('mailto:') ? (
+                            <button
+                                type="button"
+                                id="email-trigger"
+                                class="inline-flex cursor-pointer items-center justify-center text-sm hover:underline hover:underline-offset-2"
+                            >
+                                {link.text}
+                            </button>
+                        ) : (
+                            <a
+                                class="inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2"
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {link.text}
+                            </a>
+                        )
+                    )}
                 </div>
             )
         }
@@ -45,4 +58,63 @@ const currentYear = new Date().getFullYear();
             <a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. All rights reserved.
         </p>
     </div>
+    {
+        emailAddress && (
+            <dialog
+                id="email-dialog"
+                class="border-main bg-main text-main m-auto w-full max-w-xs rounded-lg border p-6 backdrop:bg-black/50"
+            >
+                <p class="mb-1 text-sm opacity-70">Escríbeme a:</p>
+                <p id="email-dialog-address" class="mb-4 font-serif text-lg break-all">
+                    {emailAddress}
+                </p>
+                <div class="flex gap-3">
+                    <button
+                        type="button"
+                        id="email-copy-btn"
+                        class="border-main flex-1 cursor-pointer rounded border px-3 py-1.5 text-sm hover:underline hover:underline-offset-2"
+                    >
+                        Copiar
+                    </button>
+                    <button
+                        type="button"
+                        id="email-close-btn"
+                        class="border-main flex-1 cursor-pointer rounded border px-3 py-1.5 text-sm hover:underline hover:underline-offset-2"
+                    >
+                        Cerrar
+                    </button>
+                </div>
+            </dialog>
+        )
+    }
 </footer>
+
+<script>
+    const trigger = document.getElementById('email-trigger');
+    const dialog = document.getElementById('email-dialog') as HTMLDialogElement | null;
+    const closeBtn = document.getElementById('email-close-btn');
+    const copyBtn = document.getElementById('email-copy-btn');
+    const addressEl = document.getElementById('email-dialog-address');
+
+    trigger?.addEventListener('click', () => dialog?.showModal());
+    closeBtn?.addEventListener('click', () => dialog?.close());
+
+    dialog?.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+    });
+
+    copyBtn?.addEventListener('click', async () => {
+        const address = addressEl?.textContent?.trim();
+        if (!address || !copyBtn) return;
+        try {
+            await navigator.clipboard.writeText(address);
+            const original = copyBtn.textContent;
+            copyBtn.textContent = 'Copiado ✓';
+            setTimeout(() => {
+                copyBtn.textContent = original;
+            }, 1500);
+        } catch {
+            // Clipboard API unavailable; the address is already visible in the dialog.
+        }
+    });
+</script>

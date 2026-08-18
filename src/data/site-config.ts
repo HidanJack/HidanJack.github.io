@@ -3,17 +3,18 @@ import hero from '../assets/images/hero.jpg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
-    website: 'https://HidanJack.github.io',
+    website: 'https://hidanjack.github.io',
     avatar: {
         src: avatar,
-        alt: 'Ethan Donovan'
+        alt: 'Luis Catalán'
     },
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Luis Catalán',
+    subtitle: 'Python Developer · Data Engineer · OCR & Graph Systems',
+    description:
+        'Portafolio de Luis Catalán, desarrollador Python especializado en pipelines OCR, matching multi-criterio con grafos (NetworkX, Neo4j) y sistemas con LLM on-device.',
     image: {
         src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
+        alt: 'Luis Catalán - Portafolio'
     },
     headerNavLinks: [
         {
@@ -21,68 +22,56 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Projects',
+            text: 'Proyectos',
             href: '/projects'
         },
         {
-            text: 'Blog',
-            href: '/blog'
-        },
-        {
-            text: 'Tags',
-            href: '/tags'
+            text: 'Sobre mí',
+            href: '/about'
         }
     ],
     footerNavLinks: [
         {
-            text: 'About',
+            text: 'Sobre mí',
             href: '/about'
         },
         {
-            text: 'Contact',
+            text: 'Contacto',
             href: '/contact'
-        },
-        {
-            text: 'Terms',
-            href: '/terms'
-        },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
         }
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
+            text: 'GitHub',
+            href: 'https://github.com/HidanJack'
         },
         {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
+            text: 'LinkedIn',
+            href: 'https://linkedin.com/in/luis-catalán-reyes-032a48329'
         },
         {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            text: 'Email',
+            href: 'mailto:luis.catalan.r@hotmail.com'
         }
     ],
     hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence.\nMy approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products.\nI have a profound appreciation for top-notch software, visual design, and the principles of product-led growth.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/JustGoodUI/dante-astro-theme) or follow me on [Twitter/X](https://twitter.com/justgoodui).",
+        title: 'Hola, soy Luis Catalán',
+        text: "Desarrollador **Python** con más de 3 años de experiencia construyendo pipelines ETL, extracción OCR y sistemas de conciliación bancaria en producción, procesando más de 1 millón de registros reales.\nMe especializo en OCR (Tesseract, YOLOv10, OpenCV), matching multi-criterio con grafos (NetworkX, Neo4j) y, más recientemente, en extender Python con Rust (PyO3) para cómputo de alto rendimiento y en integrar LLMs 100% on-device.\n\nRevisa algunos de mis proyectos abajo, o conéctate conmigo en [LinkedIn](https://linkedin.com/in/luis-catalán-reyes-032a48329) o [GitHub](https://github.com/HidanJack).",
         image: {
             src: hero,
-            alt: 'A person sitting at a desk in front of a computer'
+            alt: 'Persona trabajando frente a una computadora'
         },
         actions: [
             {
-                text: 'Get in Touch',
+                text: 'Contáctame',
                 href: '/contact'
             }
         ]
     },
     subscribe: {
-        enabled: true,
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
+        enabled: false,
+        title: 'Suscríbete',
+        text: 'Recibe actualizaciones sobre nuevos proyectos.',
         form: {
             action: '#'
         }

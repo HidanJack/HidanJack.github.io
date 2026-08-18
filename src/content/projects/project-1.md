@@ -1,7 +1,8 @@
 ---
-title: 'EcoBuddy: Sustainable Living App'
-description: EcoBuddy is a mobile app that gamifies sustainable living. Users can set eco-friendly goals, track their carbon footprint, and earn virtual rewards for adopting environmentally conscious habits.
-publishDate: 'Jan 02 2024'
+title: 'Intelitax — Plataforma de Conciliación Bancaria/Contable Automatizada'
+description: Automaticé por completo la conciliación bancaria de una empresa, incluyendo ingeniería inversa de fuentes PDF sin OCR, un motor de matching reescrito en Rust y una migración a plataforma multiusuario en Kubernetes.
+publishDate: 'Aug 01 2025'
+isFeatured: true
 seo:
   image:
     src: '../../assets/images/project-1.jpg'
@@ -10,57 +11,31 @@ seo:
 
 ![Project preview](../../assets/images/project-1.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Proyecto insignia del portafolio.** En producción desde enero de 2025, procesando más de 1 millón de registros financieros reales.
 
-**Project Overview:**
-EcoBuddy is a revolutionary mobile application designed to make sustainable living accessible, engaging, and rewarding. With a focus on gamification and real-world impact, EcoBuddy encourages users to adopt eco-friendly habits, reduce their carbon footprint, and contribute to a healthier planet.
+## El problema
 
-## Objectives
+Conciliar estados de cuenta bancarios contra los libros contables era un proceso manual, lento y propenso a error humano — horas de trabajo por cliente, cruzando a mano PDFs de bancos contra Excel contable.
 
-1. Develop a user-friendly mobile app that motivates individuals to adopt sustainable practices in their daily lives.
-2. Utilize gamification elements to make sustainable living fun and interactive.
-3. Provide educational resources and personalized challenges to empower users to make informed eco-conscious decisions.
+## Lo que construí
 
-## Features
+Un sistema que convierte horas de trabajo manual en minutos: automaticé todo el flujo, desde leer el PDF del banco hasta señalar exactamente qué transacciones no cuadran — para que el equipo contable deje de cruzar papeles a mano y se enfoque en resolver las excepciones reales, no en buscarlas.
 
-1. **EcoScore and Challenges:**
+Dos hitos técnicos destacan sobre el resto:
 
-- Users are assigned an EcoScore based on their sustainable activities and choices.
-- Daily and weekly challenges encourage users to adopt new habits and compete with friends or the community to earn EcoPoints.
+- **Descifrar PDFs "protegidos" sin usar OCR:** algunos bancos generan sus PDFs con una fuente de texto deliberadamente revuelta, para que no se pueda copiar el contenido directamente. En vez de recurrir a reconocimiento óptico (OCR), analicé cómo esa fuente codifica cada carácter y escribí desde cero un programa que descifra ese mapeo — porque no existía ninguna herramienta ya hecha que resolviera este caso.
+- **Reescritura del motor de matching en Rust:** el prototipo en Python no escalaba. Lo reescribí para que corriera en paralelo real y resolviera coincidencias con matching semántico, reduciendo un caso real de 82 movimientos sin conciliar a solo 2.
 
-2. **Personalized Eco-Goals:**
+Cuando la plataforma creció para atender a varios clientes a la vez, lideré la migración de un pipeline pensado para un solo cliente a una **arquitectura multiusuario en la nube**, integrada a un sistema real de autenticación. En la auditoría de seguridad previa a la entrega **detecté y corregí una vulnerabilidad de autorización cruzada**: cualquier sesión válida podía leer el trabajo de otro cliente con solo conocer su identificador — la corregí antes de que llegara a producción, protegiendo los datos de cada cliente entre sí.
 
-- Users can set and track personalized eco-goals, such as reducing plastic usage, conserving water, or choosing eco-friendly transportation.
-- The app provides tips and suggestions to help users achieve their goals.
+## Stack técnico
 
-3. **Green Rewards Marketplace:**
+Python · Rust (PyO3, rayon) · YOLOv10 · Tesseract · OpenCV · NetworkX · Neo4j · sentence-transformers · Flask · React (Vite + Tailwind) · Kubernetes/EKS · nginx · Docker/Podman · pytest
 
-- EcoPoints earned through challenges and sustainable actions can be redeemed in a virtual Green Rewards Marketplace.
-- The marketplace offers discounts on eco-friendly products, services, and even contributions to environmental causes.
+## Resultados
 
-4. **Community Hub:**
-
-- A community feature allows users to connect, share their eco-friendly achievements, and inspire others.
-- Users can join local eco-groups, organize clean-up events, and collaborate on sustainability projects.
-
-5. **EcoEducator AI Assistant:**
-
-- An AI-powered assistant, EcoEducator, provides personalized eco-tips, facts, and information based on users' preferences and habits.
-- Users can chat with EcoEducator for instant advice on sustainable living.
-
-## Technology Stack
-
-- Frontend: React Native for cross-platform mobile app development.
-- Backend: Firebase for real-time data synchronization and user authentication.
-- Database: Firestore for scalable and flexible data storage.
-- AI Integration: Dialogflow for natural language processing and conversation with EcoEducator.
-
-## Outcome
-
-EcoBuddy has successfully created a community of environmentally conscious individuals who actively participate in sustainable living practices. The app not only educates and motivates users but also provides tangible rewards for their commitment to a greener lifestyle, fostering a positive impact on the environment.
-
-## Client Testimonial
-
-> We couldn't be happier with the results delivered by Ethan Donovan. From the initial concept discussions to the final product, their responsiveness and collaborative approach were impressive. Our startup's website now stands out, thanks to their creative input and commitment to excellence.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+- Más de 1 millón de registros financieros procesados en producción.
+- ~95% de precisión en extracción OCR sobre documentos bancarios mexicanos.
+- 211 PDFs validados masivamente sobre 11 bancos reales.
+- Caso real: de 82 a 2 movimientos sin conciliar tras el motor de matching en Rust.
+- Vulnerabilidad de autorización cruzada detectada y corregida en auditoría propia, antes de producción.
