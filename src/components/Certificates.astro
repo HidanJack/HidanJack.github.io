@@ -1,0 +1,126 @@
+---
+const certificates: { title: string; file: string }[] = [
+    { title: 'Microsoft Office Specialist: Excel 2010', file: '01-excel-2010.jpg' },
+    { title: 'Microsoft Office Specialist: Excel 2013', file: '02-excel-2013.jpg' },
+    { title: 'Microsoft Office Specialist: Word 2013', file: '03-word-2013.jpg' },
+    { title: 'Microsoft Office Specialist: PowerPoint 2013', file: '04-powerpoint-2013.jpg' },
+    { title: 'Python — Santander Open Academy', file: '05-python-santander.jpg' },
+    { title: 'Python Profesional', file: '06-python-profesional.jpg' },
+    { title: 'DevOps: Bases y Conceptos', file: '07-devops-bases.jpg' },
+    { title: 'Git', file: '08-git.jpg' },
+    { title: 'GitHub Actions', file: '09-github-actions.jpg' },
+    { title: 'Fundamentos de Arquitectura de Software', file: '10-fundamentos-arquitectura.jpg' },
+    { title: 'Ruta de Arquitectura de Software', file: '11-ruta-arquitectura.jpg' },
+    { title: 'Backend con Microservicios', file: '12-backend-microservicios.jpg' },
+    { title: 'Replicación de Bases de Datos', file: '13-replicacion-bd.jpg' },
+    { title: 'Fundamentos de Azure', file: '14-fundamentos-azure.jpg' },
+    { title: 'Despliegue Web en Azure', file: '15-despliegue-azure.jpg' },
+    { title: 'Fundamentos de IA', file: '16-fundamentos-ia.jpg' },
+    { title: 'Desarrollo con IA: de 0 a Producción', file: '17-desarrollo-ia-produccion.jpg' },
+    { title: 'CCNA: Introducción a Redes', file: '18-ccna-intro-redes.jpg' },
+    { title: 'CCNA2: Routing y Switching', file: '19-ccna2-routing-switching.jpg' },
+    { title: 'CCNA3: Escalamiento de Redes', file: '20-ccna3-escalamiento.jpg' }
+];
+---
+
+<div class="mb-16 sm:mb-24">
+    <h2 class="mb-8 font-serif text-xl italic sm:mb-10 sm:text-2xl">Certificaciones</h2>
+
+    <div id="cert-carousel" class="scrollbar-none -mx-4 flex gap-4 overflow-x-auto px-4 pb-2" style="scroll-snap-type: x mandatory;">
+        {
+            certificates.map((cert, i) => (
+                <button
+                    type="button"
+                    class="cert-thumb border-main shrink-0 cursor-pointer overflow-hidden rounded border border-dashed"
+                    style="scroll-snap-align: start;"
+                    data-index={i}
+                    aria-label={`Ver certificado: ${cert.title}`}
+                >
+                    <img src={`/certs/${cert.file}`} alt={cert.title} class="h-32 w-auto object-cover sm:h-40" loading="lazy" />
+                </button>
+            ))
+        }
+    </div>
+
+    <dialog id="cert-dialog" class="m-auto w-full max-w-3xl border-0 bg-transparent p-0 backdrop:bg-black/70">
+        <div class="bg-main text-main border-main rounded-lg border p-4 sm:p-6">
+            <div class="mb-3 flex items-start justify-between gap-4">
+                <p id="cert-dialog-title" class="font-serif text-lg sm:text-xl">
+                    Certificado
+                </p>
+                <button type="button" id="cert-close-btn" class="border-main shrink-0 cursor-pointer rounded border px-3 py-1 text-sm hover:underline">
+                    Cerrar
+                </button>
+            </div>
+            <img id="cert-dialog-image" src="" alt="" class="max-h-[70vh] w-full rounded object-contain" />
+            <div class="mt-4 flex items-center justify-between">
+                <button type="button" id="cert-prev-btn" class="border-main cursor-pointer rounded border px-4 py-1.5 text-sm hover:underline">
+                    ← Anterior
+                </button>
+                <span id="cert-counter" class="text-sm opacity-70" />
+                <button type="button" id="cert-next-btn" class="border-main cursor-pointer rounded border px-4 py-1.5 text-sm hover:underline">
+                    Siguiente →
+                </button>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+<script>
+    const certificates = Array.from(document.querySelectorAll<HTMLButtonElement>('.cert-thumb')).map((btn) => ({
+        title: btn.getAttribute('aria-label')?.replace('Ver certificado: ', '') ?? '',
+        src: btn.querySelector('img')?.getAttribute('src') ?? ''
+    }));
+
+    const dialog = document.getElementById('cert-dialog') as HTMLDialogElement | null;
+    const dialogImage = document.getElementById('cert-dialog-image') as HTMLImageElement | null;
+    const dialogTitle = document.getElementById('cert-dialog-title');
+    const counter = document.getElementById('cert-counter');
+    const closeBtn = document.getElementById('cert-close-btn');
+    const prevBtn = document.getElementById('cert-prev-btn');
+    const nextBtn = document.getElementById('cert-next-btn');
+
+    let currentIndex = 0;
+
+    function show(index: number) {
+        if (certificates.length === 0) return;
+        currentIndex = (index + certificates.length) % certificates.length;
+        const cert = certificates[currentIndex];
+        if (dialogImage) {
+            dialogImage.src = cert.src;
+            dialogImage.alt = cert.title;
+        }
+        if (dialogTitle) dialogTitle.textContent = cert.title;
+        if (counter) counter.textContent = `${currentIndex + 1} / ${certificates.length}`;
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('.cert-thumb').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const index = Number(btn.dataset.index ?? 0);
+            show(index);
+            dialog?.showModal();
+        });
+    });
+
+    closeBtn?.addEventListener('click', () => dialog?.close());
+    prevBtn?.addEventListener('click', () => show(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => show(currentIndex + 1));
+
+    dialog?.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+    });
+
+    dialog?.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') show(currentIndex - 1);
+        if (event.key === 'ArrowRight') show(currentIndex + 1);
+    });
+</script>
+
+<style>
+    .scrollbar-none {
+        scrollbar-width: none;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
+    }
+</style>

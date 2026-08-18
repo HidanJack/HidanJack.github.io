@@ -42,7 +42,7 @@ Lo que me mueve no es el framework de moda, sino sentir que algo que construí d
 
 Lic. en Ciencias de la Informática (Trunca) — UPIICSA, IPN · Bachillerato Técnico en Informática — CONALEP Estado de México 236
 
-Certificaciones: Python Profesional · Backend con Microservicios · Ruta y Fundamentos de Arquitectura de Software · DevOps: Bases y Conceptos · Fundamentos de IA · Fundamentos de Azure · CCNA Routing & Switching (Cisco)
+Certificaciones: Python Profesional · Backend con Microservicios · Ruta y Fundamentos de Arquitectura de Software · DevOps: Bases y Conceptos · Git · Replicación de Bases de Datos · Fundamentos de IA · Desarrollo con IA: de 0 a Producción · GitHub Actions · Fundamentos de Azure · Despliegue Web en Azure · CCNA Routing & Switching (Cisco) · Microsoft Office Specialist: Excel, Word, PowerPoint
 
 ## Contacto
 

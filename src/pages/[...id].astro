@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Certificates from '../components/Certificates.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
@@ -28,4 +29,5 @@ const { Content } = await render(page);
             <Content />
         </div>
     </article>
+    {page.id === 'about' && <Certificates />}
 </BaseLayout>
