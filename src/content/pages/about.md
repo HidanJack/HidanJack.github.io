@@ -28,9 +28,18 @@ Construí **Knoto** porque yo mismo necesitaba un lugar donde no se me perdieran
 
 Lo que me mueve no es el framework de moda, sino sentir que algo que construí de verdad le resuelve un problema a alguien — a mí o a otra persona. Sé que todavía me falta mucho por aprender, y esa parte —la de nunca terminar de aprender— es la que más amo de esta carrera.
 
+## Cómo trabajo: criterio de ingeniería, ejecución acelerada con IA
+
+Uso agentes de IA (Claude Code) como parte de mi flujo, con el mismo rigor que le aplico a cualquier código que va a producción: primero diseño (diagramas, especificación y un plan por fases con pruebas), la IA acelera la implementación, y nada se da por terminado sin revisión y pruebas. Lo que no delego es decidir y verificar.
+
+Ese criterio es el que, en auditorías propias, encontró una vulnerabilidad de autorización cruzada entre clientes y una condición de carrera antes de que llegaran a producción; el que diagnosticó seis errores de lógica al portar un motor de conciliación de Python a Rust; y el que en Knoto deja al código —no al modelo— calcular y verificar los datos sensibles.
+
+También construí mis propios agentes, cada uno pensado para contrarrestar un punto débil conocido de los LLMs: uno que me interroga sobre requisitos para exponer supuestos antes de diseñar, uno que propone arquitectura con sus tradeoffs, un "décimo hombre" cuyo único trabajo es atacar el plan, uno que mide la factibilidad con datos reales en vez de opiniones, uno que diagrama como código, uno que verifica interfaces en un navegador real — y una **usuaria sintética**: una contadora mexicana escéptica, sin memoria, que revisa cada versión de una interfaz como si la viera por primera vez.
+
 ## Habilidades técnicas
 
-- **Lenguajes:** Python (avanzado), SQL, JavaScript, TypeScript
+- **IA aplicada al desarrollo:** sistemas multi-agente, Claude Code, MCP, evals / evaluación de LLMs, guardrails, context engineering
+- **Lenguajes:** Python (avanzado), SQL, JavaScript, TypeScript, Rust
 - **Data & ETL:** Pandas, Polars, NumPy, pipelines configurables por JSON
 - **Grafos & Matching:** NetworkX, Neo4j, Cypher, RapidFuzz
 - **OCR & Documentos:** Tesseract, OpenCV, YOLOv10, docTR
